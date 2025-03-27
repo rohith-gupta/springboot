@@ -1,5 +1,6 @@
 package com.boot;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,17 +41,36 @@ public class DemoApplication {
 		
 		// retriving the data from data base
 		
-		try {
+		/*
+		 * try {
+		 * 
+		 * //Optional<Users> user = userrepo.findById(3); Iterable<Users> userlist =
+		 * userrepo.findAll(); for (Users users : userlist) { System.out.println(users);
+		 * } } catch(Exception e) {
+		 * System.out.println("error while retriving the data"); }
+--------------------------------------------------------------------------------------------*/
 		
-		//Optional<Users> user = userrepo.findById(3);
-			Iterable<Users> userlist = userrepo.findAll();
-		for (Users users : userlist) { System.out.println(users);	}
-		}
-		catch(Exception e)
-		{
-			System.out.println("error while retriving the data");
-		}
+		//deleting data from the database
 		
+		/*
+		 * Iterable<Integer> itr = List.of(2,3);
+		 * 
+		 * userrepo.deleteAllById(itr);
+		 * 
+		 * System.out.print("deleted");
+---------------------------------------------------------------------------------------------*/
+		
+		//update
+		//to use try catch block here for optional
+		Optional<Users> user = userrepo.findById(1);
+		
+		Users u1 = user.get();
+		
+		u1.setName("Rohith Gupta");
+		
+		Users u2 = userrepo.save(u1);
+		
+		System.out.println(u2);
 		
 		
 		
