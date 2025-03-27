@@ -1,6 +1,7 @@
 package com.boot;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +19,7 @@ public class DemoApplication {
 		UserRepo userrepo = (UserRepo) context.getBean("userRepo");
 		
 		
-		// adding users to database
+	/*	// adding users to database
 		
 		Users user = new Users();
 		
@@ -35,6 +36,21 @@ public class DemoApplication {
 		List<Users> result =  (List<Users>) userrepo.saveAll(user1);
 		
 		System.out.print(result);
+------------------------------------------------------------------------------------------- */
+		
+		// retriving the data from data base
+		
+		try {
+		
+		//Optional<Users> user = userrepo.findById(3);
+			Iterable<Users> userlist = userrepo.findAll();
+		for (Users users : userlist) { System.out.println(users);	}
+		}
+		catch(Exception e)
+		{
+			System.out.println("error while retriving the data");
+		}
+		
 		
 		
 		
