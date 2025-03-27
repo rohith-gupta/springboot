@@ -1,5 +1,7 @@
 package com.boot;
 
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,16 +17,29 @@ public class DemoApplication {
 		
 		UserRepo userrepo = (UserRepo) context.getBean("userRepo");
 		
+		
+		// adding users to database
+		
 		Users user = new Users();
 		
-		user.setName("rohith");
-		user.setPassword("qwerty");
+		user.setName("gupta");
+		user.setPassword("Asdfg");
 		
-		userrepo.save(user);
+		Users u2 = new Users();
 		
-		System.out.print(user);
+		u2.setName("shivani");
+		u2.setPassword("Zxcvb");
 		
-		// automatically done using springboot
+		List<Users> user1 = List.of(user,u2);
+		
+		List<Users> result =  (List<Users>) userrepo.saveAll(user1);
+		
+		System.out.print(result);
+		
+		
+		
+		
+		
 		
 	}
 
