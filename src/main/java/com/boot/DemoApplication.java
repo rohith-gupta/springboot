@@ -24,6 +24,8 @@ public class DemoApplication {
 		
 		System.out.print(user);
 		
+		// automatically done using springboot
+		
 	}
 
 }
