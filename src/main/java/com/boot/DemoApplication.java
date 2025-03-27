@@ -23,6 +23,7 @@ public class DemoApplication {
 		userrepo.save(user);
 		
 		System.out.print(user);
+		
 	}
 
 }
