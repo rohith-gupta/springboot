@@ -41,14 +41,16 @@ public class DemoApplication {
 		
 		// retriving the data from data base
 		
+		
 		/*
 		 * try {
 		 * 
 		 * //Optional<Users> user = userrepo.findById(3); Iterable<Users> userlist =
 		 * userrepo.findAll(); for (Users users : userlist) { System.out.println(users);
-		 * } } catch(Exception e) {
+		 * } } catch (Exception e) {
 		 * System.out.println("error while retriving the data"); }
---------------------------------------------------------------------------------------------*/
+		 */
+//--------------------------------------------------------------------------------------------
 		
 		//deleting data from the database
 		
@@ -62,16 +64,19 @@ public class DemoApplication {
 		
 		//update
 		//to use try catch block here for optional
-		Optional<Users> user = userrepo.findById(1);
-		
-		Users u1 = user.get();
-		
-		u1.setName("Rohith Gupta");
-		
-		Users u2 = userrepo.save(u1);
-		
-		System.out.println(u2);
-		
+		/*
+		 * Optional<Users> user = userrepo.findById(1);
+		 * 
+		 * Users u1 = user.get();
+		 * 
+		 * u1.setName("Rohith Gupta");
+		 * 
+		 * Users u2 = userrepo.save(u1);
+		 * 
+		 * System.out.println(u2);
+		 
+---------------------------------------------------------------------------------------------*/
+
 		
 		
 		
