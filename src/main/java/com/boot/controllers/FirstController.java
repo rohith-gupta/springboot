@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.boot.entities.Users;
@@ -52,6 +54,14 @@ public class FirstController {
 	{
 		List<Users> result = myServices.getdatabyprefix(prefix);
 		return result;
+	}
+	
+	@PostMapping("/users")
+	public String saveuser(@RequestBody Users u)
+	{
+		String result = myServices.setuserentry(u);
+		return result;
+		
 	}
 		
 

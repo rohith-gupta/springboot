@@ -47,5 +47,11 @@ public class MyServices {
 		List<Users> users = userRepo.findByNameStartingWith(prefix);
 		return users;
 	}
+	
+	public String setuserentry(Users user)
+	{
+		userRepo.save(user);
+		return "user saved";
+	}
 
 }
